@@ -25,7 +25,7 @@ h1 {
 
 .App {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: relative;
   background-color: rgba(0,0,0,0.4);
   color: #fff;
@@ -66,19 +66,17 @@ h1 {
 
 .container {
   max-width: 700px;
-  height: 700px;
   margin: auto;
   padding: 0 1rem;
   position: relative;
   top: 10%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
 }
 
 .App .top {
   width: 100%;
-  margin: 7rem auto;
+  margin: 3rem auto;
 }
 
 .error {
@@ -119,7 +117,7 @@ h1 {
   justify-content: space-evenly;
   text-align: center;
   width: 100%;
-  margin: 1rem auto;
+  margin: 3rem auto;
   padding: 1rem;
   border-radius: 12px;
   background-color: rgba(255,255,255, 0.2);
