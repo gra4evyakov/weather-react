@@ -72,11 +72,12 @@ h1 {
   top: 10%;
   display: flex;
   flex-direction: column;
+  gap: 7rem;
 }
 
 .App .top {
   width: 100%;
-  margin: 3rem auto;
+  margin: 1rem auto;
 }
 
 .error {
@@ -109,18 +110,22 @@ h1 {
 
 .temp {
   display: flex;
-  gap: 1rem;
 }
 
 .App .bottom {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   text-align: center;
   width: 100%;
-  margin: 3rem auto;
-  padding: 1rem;
+  margin: 2rem auto;
+  padding: 1rem 0;
   border-radius: 12px;
   background-color: rgba(255,255,255, 0.2);
+}
+
+.App .bottom div {
+  flex-basis: 33.3%;
 }
 
 .bold {

@@ -6,23 +6,26 @@ function App() {
     const [data, setData] = useState({})
     const [location, setLocation] = useState('')
     const [error, setError] = useState('')
-    const [geo, setGeo] = useState('')
 
   const url =`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&lang=ru&appid=b62ccba4d0e8105ec9c49025598e8217`
 
-  function searchLocation(event) {
-        if (event.key === 'Enter') {
-            axios.get(url).then((response) => {
-                setData(response.data)
-                console.log(response)
-                setError('')
+    function getWeather() {
+        axios.get(url).then((response) => {
+            console.log(response)
+            setData(response.data)
+            setError('')
 
-            }).catch(error => {
-                if (error.response.status === 404) {
-                    setError('Пожалуйста, введите корректный город')
-                }
-            })
-            setLocation('')
+        }).catch(error => {
+            if (error.response.status === 404) {
+                setError('Пожалуйста, введите корректный город')
+            }
+        })
+        setLocation('')
+    }
+
+  function getWeatherByLocation(event) {
+        if (event.key === 'Enter') {
+            getWeather()
         }
   }
 
@@ -51,7 +54,7 @@ function App() {
             <input
                 value={location}
                 onChange={event => setLocation(event.target.value)}
-                onKeyPress={searchLocation}
+                onKeyPress={getWeatherByLocation}
                 placeholder='Введите город'
                 type="text"/>
             <button className='geolocation' onClick={() => handleWeatherByGeolocation()}>
